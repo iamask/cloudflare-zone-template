@@ -95,3 +95,18 @@ resource "cloudflare_ruleset" "zone_custom_firewall" {
     enabled     = true
   }
 }
+
+resource "cloudflare_ruleset" "zone_custom_firewal2l" {
+  zone_id     = "bcbaeaa288da7324b61d91b0e41adc90"
+  name        = "Phase entry point ruleset for custom rules in my zone"
+  description = ""
+  kind        = "zone"
+  phase       = "http_request_firewall_custom"
+
+  rules {
+    action      = "block"
+    expression  = "(not cf.edge.server_port in {80 446})"
+    description = "Block ports other than 80 and 446"
+    enabled     = true
+  }
+}
