@@ -8,6 +8,6 @@ resource "cloudflare_access_application" "staging_app" {
     allowed_methods   = ["GET", "POST", "OPTIONS"]
     allowed_origins   = ["https://example.com"]
     allow_credentials = true
-    max_age           = 10
+    max_age           = 20
   }
 }
