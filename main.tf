@@ -48,3 +48,8 @@ module "custom_rules" {
 module "cache_rules" {
   source = "./cache_rules"
 }
+
+
+module "zerotrust_access" {
+  source = "./zero_trust/access"
+}
