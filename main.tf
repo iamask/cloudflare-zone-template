@@ -81,6 +81,6 @@ resource "cloudflare_ruleset" "zone_level_managed_waf" {
   }
 }
 
-module "customrules" {
+module "custom_rules" {
   source = "./security/custom_rules"
 }
