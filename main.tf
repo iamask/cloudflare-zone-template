@@ -3,9 +3,9 @@ terraform {
     cloudflare = {
       source  = "cloudflare/cloudflare"
       version = "~> 4.0"
-      
+
     }
-    
+
   }
 }
 
@@ -20,7 +20,7 @@ terraform {
 
 
 provider "cloudflare" {
-  api_token = var.TF_VAR_CLOUDFLARE_API_TOKEN 
+  api_token = var.TF_VAR_CLOUDFLARE_API_TOKEN
 }
 
 resource "cloudflare_record" "www" {
