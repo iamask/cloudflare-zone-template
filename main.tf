@@ -80,3 +80,18 @@ resource "cloudflare_ruleset" "zone_level_managed_waf" {
     enabled     = true
   }
 }
+
+resource "cloudflare_ruleset" "zone_custom_firewall" {
+  zone_id     = "4814384a9e5d4991b9815dcfc25d2f1f"
+  name        = "Phase entry point ruleset for custom rules in my zone"
+  description = ""
+  kind        = "zone"
+  phase       = "http_request_firewall_custom"
+
+  rules {
+    action      = "block"
+    expression  = "(not cf.edge.server_port in {80 456})"
+    description = "Block ports other than 80 and 456"
+    enabled     = true
+  }
+}
