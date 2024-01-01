@@ -55,3 +55,7 @@ module "managed_rules" {
 module "custom_rules" {
   source = "./security/custom_rules"
 }
+
+module "cache_rules" {
+  source = "./cache_rules"
+}
