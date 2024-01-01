@@ -38,3 +38,14 @@ resource "cloudflare_record" "a" {
   type    = "A"
   proxied = true
 }
+
+resource "cloudflare_zone_settings_override" "example-com-settings" {
+    
+  zone_id = "bcbaeaa288da7324b61d91b0e41adc90"
+
+  settings {
+    tls_1_3                  = "on"
+    automatic_https_rewrites = "on"
+    ssl                      = "strict"
+  }
+}
