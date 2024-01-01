@@ -48,37 +48,8 @@ resource "cloudflare_zone_settings_override" "example-com-settings" {
   }
 }
 
-# Configure a ruleset at the zone level for the "http_request_firewall_managed" phase
-resource "cloudflare_ruleset" "zone_level_managed_waf" {
-  zone_id     = "bcbaeaa288da7324b61d91b0e41adc90"
-  name        = "Managed WAF entry point ruleset"
-  description = "Zone-level WAF Managed Rules config"
-  kind        = "zone"
-  phase       = "http_request_firewall_managed"
-
-  # Execute Cloudflare Managed Ruleset
-  rules {
-    action = "execute"
-    action_parameters {
-      id      = "efb7b8c949ac4650a09736fc376e9aee"
-      version = "latest"
-    }
-    expression  = "true"
-    description = "Execute Cloudflare Managed Ruleset on my zone-level phase entry point ruleset"
-    enabled     = true
-  }
-
-  # Execute Cloudflare OWASP Core Ruleset
-  rules {
-    action = "execute"
-    action_parameters {
-      id      = "4814384a9e5d4991b9815dcfc25d2f1f"
-      version = "latest"
-    }
-    expression  = "true"
-    description = "Execute Cloudflare OWASP Core Ruleset on my zone-level phase entry point ruleset"
-    enabled     = true
-  }
+module "managed_rules" {
+  source = "./security/managed_rules"
 }
 
 module "custom_rules" {
