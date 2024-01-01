@@ -18,26 +18,15 @@ terraform {
   }
 }
 
-
 provider "cloudflare" {
   api_token = var.TF_VAR_CLOUDFLARE_API_TOKEN
 }
 
-resource "cloudflare_record" "www" {
-  zone_id = "bcbaeaa288da7324b61d91b0e41adc90"
-  name    = "www"
-  value   = "203.0.113.100"
-  type    = "A"
-  proxied = true
+module "dns" {
+  source = "./dns"
 }
 
-resource "cloudflare_record" "a" {
-  zone_id = "bcbaeaa288da7324b61d91b0e41adc90"
-  name    = "aa"
-  value   = "1.0.23.100"
-  type    = "A"
-  proxied = true
-}
+
 resource "cloudflare_zone_settings_override" "example-com-settings" {
   zone_id = "bcbaeaa288da7324b61d91b0e41adc90"
 
