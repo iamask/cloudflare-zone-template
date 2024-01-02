@@ -14,10 +14,10 @@ resource "cloudflare_record" "a" {
   proxied = true
 }
 
-resource "cloudflare_record" "a" {
+resource "cloudflare_record" "aa" {
   zone_id = "bcbaeaa288da7324b61d91b0e41adc90"
   name    = "aa"
-  value   = "200.0.23.100"
+  value   = "200.0.23.190"
   type    = "A"
   proxied = true
 }
