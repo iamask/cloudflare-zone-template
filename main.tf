@@ -50,6 +50,10 @@ module "cache_rules" {
 }
 
 
+module "transform_rules" {
+  source = "./transform_rules"
+}
+
 module "zerotrust_access" {
   source = "./zero_trust/access"
 }
