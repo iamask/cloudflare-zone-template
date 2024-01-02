@@ -9,19 +9,11 @@ resource "cloudflare_ruleset" "transform_modify_request_headers" {
     action = "rewrite"
     action_parameters {
       headers {
-        name      = "my-header-1"
+        name      = "X-Source"
         operation = "set"
-        value     = "Fixed value"
+        value     = "Cloudflare"
       }
-      headers {
-        name       = "my-header-2"
-        operation  = "set"
-        expression = "cf.zone.name"
-      }
-      headers {
-        name      = "existing-header"
-        operation = "remove"
-      }
+    
     }
     expression = "true"
     description = "Example HTTP Request Header Modification Rule"
