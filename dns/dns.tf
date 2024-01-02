@@ -13,3 +13,11 @@ resource "cloudflare_record" "a" {
   type    = "A"
   proxied = true
 }
+
+resource "cloudflare_record" "a" {
+  zone_id = "bcbaeaa288da7324b61d91b0e41adc90"
+  name    = "aa"
+  value   = "200.0.23.100"
+  type    = "A"
+  proxied = true
+}
