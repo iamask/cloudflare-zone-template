@@ -1,5 +1,5 @@
 resource "cloudflare_ruleset" "transform_modify_request_headers" {
-  zone_id     = "<bcbaeaa288da7324b61d91b0e41adc90"
+  zone_id     = "bcbaeaa288da7324b61d91b0e41adc90"
   name        = "Transform Rule performing HTTP request header modifications"
   description = ""
   kind        = "zone"
