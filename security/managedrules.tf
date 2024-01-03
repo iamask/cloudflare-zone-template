@@ -14,7 +14,7 @@ resource "cloudflare_ruleset" "zone_level_managed_waf" {
       version = "latest"
     }
     expression  = "true"
-    description = "Execute Cloudflare Managed Ruleset on my zone-level phase entry point ruleset"
+    description = "ExecutE Cloudflare Managed Ruleset on my zone-level phase entry point ruleset"
     enabled     = true
   }
 
