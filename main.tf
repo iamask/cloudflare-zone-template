@@ -38,7 +38,7 @@ resource "cloudflare_zone_settings_override" "example-com-settings" {
 }
 
 module "managed_rules" {
-  source = "./security/managed_rules"
+  source = "./security"
 }
 
 module "custom_rules" {
