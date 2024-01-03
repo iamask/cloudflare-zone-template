@@ -59,7 +59,7 @@ module "transform_rules" {
 }
 
 
-module "zerotrust_access" {
+module "zero_trust_access" {
   source = "./zero_trust/access"
 }
 
