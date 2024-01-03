@@ -41,8 +41,12 @@ module "managed_rules" {
   source = "./security"
 }
 
+module "rate_limit_rule" {
+  source = "./security"
+}
+
 module "custom_rules" {
-  source = "./security/custom_rules"
+  source = "./security"
 }
 
 module "cache_rules" {
