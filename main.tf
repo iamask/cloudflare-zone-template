@@ -38,15 +38,15 @@ resource "cloudflare_zone_settings_override" "example-com-settings" {
 }
 
 module "managed_rules" {
-  source = "./security"
+  source = "./security/managed_rules"
 }
 
-module "rate_limit_rule" {
-  source = "./security"
+module "rate_limit_rules" {
+  source = "./security/rate_limit"
 }
 
 module "custom_rules" {
-  source = "./security"
+  source = "./security/custom_rules"
 }
 
 module "cache_rules" {
