@@ -11,4 +11,12 @@ resource "cloudflare_ruleset" "zone_custom_firewall" {
     description = "Block ports other than 80 and 443"
     enabled     = true
   }
+
+  rules {
+    action      = "block"
+    expression  = "(not cf.edge.server_port in {800 443})"
+    description = "Block ports other than 800 and 443"
+    enabled     = true
+  }
 }
+
