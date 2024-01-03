@@ -51,9 +51,6 @@ module "cache_rules" {
 
 
 module "transform_rules" {
-  source = "./zero_trust/access"
+  source = "./transform_rules"
 }
 
-module "zerotrust_access" {
-  source = "./zero_trust/access"
-}
