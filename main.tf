@@ -60,6 +60,6 @@ module "transform_rules" {
 
 
 module "zerotrust_access" {
-  source = "./zerotrust/access"
+  source = "./zero_trust/access"
 }
 
