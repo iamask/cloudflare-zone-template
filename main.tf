@@ -27,6 +27,30 @@ module "dns" {
 }
 
 
+module "managed_rules" {
+  source = "./security"
+}
+
+module "custom_rules" {
+  source = "./security"
+}
+
+module "rate_limit" {
+  source = "./security"
+}
+
+module "cache_rules" {
+  source = "./cache_rules"
+}
+
+module "transform_rules" {
+  source = "./transform_rules"
+}
+
+module "zerotrust_access" {
+  source = "./zero_trust/access"
+}
+
 resource "cloudflare_zone_settings_override" "example-com-settings" {
   zone_id = "bcbaeaa288da7324b61d91b0e41adc90"
 
@@ -35,25 +59,4 @@ resource "cloudflare_zone_settings_override" "example-com-settings" {
     automatic_https_rewrites = "on"
     ssl                      = "strict"
   }
-}
-
-module "managed_rules" {
-  source = "./security/managed_rules"
-}
-
-module "custom_rules" {
-  source = "./security/custom_rules"
-}
-
-module "cache_rules" {
-  source = "./cache_rules"
-}
-
-
-module "transform_rules" {
-  source = "./transform_rules"
-}
-
-module "zerotrust_access" {
-  source = "./zero_trust/access"
 }
