@@ -28,7 +28,7 @@ rules {
 
   rules {
     action      = "block"
-    expression  = "(cf.threat_score gt 80})"
+    expression  = "(cf.threat_score gt 80)"
     description = "Log IP Threatscore"
     enabled     = true
   }
