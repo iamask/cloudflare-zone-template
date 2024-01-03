@@ -58,3 +58,8 @@ module "transform_rules" {
   source = "./transform_rules"
 }
 
+
+module "zerotrust_access" {
+  source = "./zerotrust/access"
+}
+
