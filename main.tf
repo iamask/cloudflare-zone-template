@@ -34,6 +34,7 @@ resource "cloudflare_zone_settings_override" "example-com-settings" {
     tls_1_3                  = "on"
     automatic_https_rewrites = "on"
     ssl                      = "strict"
+    brotli                   = "on"
   }
 }
 
