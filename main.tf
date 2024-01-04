@@ -54,8 +54,8 @@ resource "cloudflare_zone_settings_override" "tf-zxc-co-in-settings" {
 }
 
 resource "cloudflare_argo" "tf-zxc-co-in-settings" {
-  zone_id        = "bcbaeaa288da7324b61d91b0e41adc90"
-  smart_routing  = "on"
+  zone_id       = "bcbaeaa288da7324b61d91b0e41adc90"
+  smart_routing = "on"
 }
 
 module "managed_rules" {
