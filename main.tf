@@ -38,15 +38,15 @@ resource "cloudflare_zone_settings_override" "tf-zxc-co-in-settings" {
     http2                    = "on"
     http3                    = "on"
     always_use_https         = "on"
-    ipv6                     = "on"   
-    min_tls_version          ="1.2"
-    prefetch_preload         = "on" 
+    ipv6                     = "on"
+    min_tls_version          = "1.2"
+    prefetch_preload         = "on"
     zero_rtt                 = "on"
     minify {
-               css  = "on"
-               html = "on"
-               js   = "on"
-            } 
+      css  = "on"
+      html = "on"
+      js   = "on"
+    }
 
   }
 }
