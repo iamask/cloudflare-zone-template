@@ -43,7 +43,7 @@ resource "cloudflare_zone_settings_override" "tf-zxc-co-in-settings" {
     min_tls_version          = "1.3"
     prefetch_preload         = "on"
     zero_rtt                 = "on"
-    polish                   = "on"
+    polish                   = "lossless"
     minify {
       css  = "on"
       html = "on"
@@ -51,6 +51,11 @@ resource "cloudflare_zone_settings_override" "tf-zxc-co-in-settings" {
     }
 
   }
+}
+
+resource "cloudflare_argo" "tf-zxc-co-in-settings" {
+  zone_id        = "bcbaeaa288da7324b61d91b0e41adc90"
+  smart_routing  = "on"
 }
 
 module "managed_rules" {
