@@ -27,7 +27,7 @@ module "dns" {
 }
 
 
-resource "cloudflare_zone_settings_override" "example-com-settings" {
+resource "cloudflare_zone_settings_override" "tf-zxc-co-in-settings" {
   zone_id = "bcbaeaa288da7324b61d91b0e41adc90"
 
   settings {
@@ -35,6 +35,19 @@ resource "cloudflare_zone_settings_override" "example-com-settings" {
     automatic_https_rewrites = "on"
     ssl                      = "strict"
     brotli                   = "on"
+    http2                    = "on"
+    http3                    = "on"
+    always_use_https         = "on"
+    ipv6                     = "on"   
+    min_tls_version          ="1.2"
+    prefetch_preload         = "on" 
+    zero_rtt                 = "on"
+    minify {
+               css  = "on"
+               html = "on"
+               js   = "on"
+            } 
+
   }
 }
 
