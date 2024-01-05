@@ -22,13 +22,6 @@ provider "cloudflare" {
   api_token = var.API_TOKEN
 }
 
-module "dns" {
-  source    = "./dns"
-  API_TOKEN = var.API_TOKEN
-  ZONE_ID   = var.ZONE_ID
-}
-
-
 resource "cloudflare_zone_settings_override" "tf-zxc-co-in-settings" {
   zone_id = var.ZONE_ID
 
@@ -55,6 +48,12 @@ resource "cloudflare_zone_settings_override" "tf-zxc-co-in-settings" {
   }
 }
 
+module "dns" {
+  source    = "./dns"
+  API_TOKEN = var.API_TOKEN
+  ZONE_ID   = var.ZONE_ID
+}
+
 resource "cloudflare_argo" "tf-zxc-co-in-settings" {
   zone_id       = var.ZONE_ID
   smart_routing = "on"
@@ -79,14 +78,20 @@ module "custom_rules" {
 }
 
 module "cache_rules" {
-  source    = "./cache_rules"
+  source    = "./rules/cache_rules"
   API_TOKEN = var.API_TOKEN
   ZONE_ID   = var.ZONE_ID
 }
 
 
 module "transform_rules" {
-  source    = "./transform_rules"
+  source    = "./rules/transform_rules"
+  API_TOKEN = var.API_TOKEN
+  ZONE_ID   = var.ZONE_ID
+}
+
+module "redirect_rules" {
+  source    = "./rules/redirect_rules"
   API_TOKEN = var.API_TOKEN
   ZONE_ID   = var.ZONE_ID
 }
