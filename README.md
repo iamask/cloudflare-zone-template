@@ -1,4 +1,4 @@
-This is a basic template to get started with Cloudflare after onboarding an Enterprise zone.
+This is a basic template to get started with Cloudflare after onboarding an Enterprise zone. State file is stored in terraform Cloud and integrated with Github actions.
 
 **Template will update** :
 
