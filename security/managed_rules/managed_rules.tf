@@ -1,6 +1,6 @@
 # Configure a ruleset at the zone level for the "http_request_firewall_managed" phase
 resource "cloudflare_ruleset" "zone_level_managed_waf" {
-  zone_id     = "bcbaeaa288da7324b61d91b0e41adc90"
+  zone_id     = var.ZONE_ID
   name        = "Managed WAF entry point ruleset"
   description = "Zone-level WAF Managed Rules config"
   kind        = "zone"

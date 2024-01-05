@@ -1,6 +1,6 @@
 
 resource "cloudflare_ruleset" "zone_rl" {
-  zone_id     = "bcbaeaa288da7324b61d91b0e41adc90"
+  zone_id     = var.ZONE_ID
   name        = "Phase entry point ruleset for RL"
   description = "RL"
   kind        = "zone"

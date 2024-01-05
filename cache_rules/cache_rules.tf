@@ -1,6 +1,6 @@
 # Cache rule configuring cache settings and defining custom cache keys
 resource "cloudflare_ruleset" "cache_rules_example" {
-  zone_id     = "bcbaeaa288da7324b61d91b0e41adc90"
+  zone_id     = var.ZONE_ID
   name        = "Set cache settings"
   description = "Set cache settings for incoming requests"
   kind        = "zone"

@@ -19,16 +19,18 @@ terraform {
 }
 
 provider "cloudflare" {
-  api_token = var.TF_VAR_CLOUDFLARE_API_TOKEN
+  api_token = var.API_TOKEN
 }
 
 module "dns" {
-  source = "./dns"
+  source    = "./dns"
+  API_TOKEN = var.API_TOKEN
+  ZONE_ID   = var.ZONE_ID
 }
 
 
 resource "cloudflare_zone_settings_override" "tf-zxc-co-in-settings" {
-  zone_id = "bcbaeaa288da7324b61d91b0e41adc90"
+  zone_id = var.ZONE_ID
 
   settings {
     tls_1_3                  = "on"
@@ -54,33 +56,45 @@ resource "cloudflare_zone_settings_override" "tf-zxc-co-in-settings" {
 }
 
 resource "cloudflare_argo" "tf-zxc-co-in-settings" {
-  zone_id       = "bcbaeaa288da7324b61d91b0e41adc90"
+  zone_id       = var.ZONE_ID
   smart_routing = "on"
 }
 
 module "managed_rules" {
-  source = "./security/managed_rules"
+  source    = "./security/managed_rules"
+  API_TOKEN = var.API_TOKEN
+  ZONE_ID   = var.ZONE_ID
 }
 
 module "rate_limit_rules" {
-  source = "./security/rate_limit"
+  source    = "./security/rate_limit"
+  API_TOKEN = var.API_TOKEN
+  ZONE_ID   = var.ZONE_ID
 }
 
 module "custom_rules" {
-  source = "./security/custom_rules"
+  source    = "./security/custom_rules"
+  API_TOKEN = var.API_TOKEN
+  ZONE_ID   = var.ZONE_ID
 }
 
 module "cache_rules" {
-  source = "./cache_rules"
+  source    = "./cache_rules"
+  API_TOKEN = var.API_TOKEN
+  ZONE_ID   = var.ZONE_ID
 }
 
 
 module "transform_rules" {
-  source = "./transform_rules"
+  source    = "./transform_rules"
+  API_TOKEN = var.API_TOKEN
+  ZONE_ID   = var.ZONE_ID
 }
 
 
 module "zero_trust_access" {
-  source = "./zero_trust/access"
+  source    = "./zero_trust/access"
+  API_TOKEN = var.API_TOKEN
+  ZONE_ID   = var.ZONE_ID
 }
 
