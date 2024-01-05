@@ -3,6 +3,5 @@ variable "API_TOKEN" {
 }
 
 variable "ZONE_ID" {
-  description = "Cloudflare API token"
+  description = "Cloudflare Zone ID"
 }
-
