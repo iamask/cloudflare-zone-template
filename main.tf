@@ -9,6 +9,7 @@ terraform {
   }
 }
 
+# remove this block to store the state file locally
 terraform {
   cloud {
     organization = "iamask"
