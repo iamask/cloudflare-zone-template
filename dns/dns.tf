@@ -9,7 +9,7 @@ resource "cloudflare_record" "www" {
 resource "cloudflare_record" "a" {
   zone_id = var.ZONE_ID
   name    = "aa"
-  value   = "122.0.23.100"
+  value   = "122.0.23.145"
   type    = "A"
   proxied = true
 }
