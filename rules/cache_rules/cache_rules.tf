@@ -14,7 +14,7 @@ resource "cloudflare_ruleset" "cache_rules_example" {
         default = 60
         status_code_ttl {
           status_code = 200
-          value       = 50
+          value       = 51
         }
         status_code_ttl {
           status_code_range {
