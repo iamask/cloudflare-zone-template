@@ -14,7 +14,7 @@ resource "cloudflare_custom_hostname" "merchant1" {
 
 resource "cloudflare_custom_hostname" "merchant2" {
   zone_id  = var.ZONE_ID
-  hostname = "spotify.tf.zxc.co.in"
+  hostname = "ajay.tf.zxc.co.in"
   custom_origin_server = "fallback.tf.zxc.co.in"
   ssl {
     method = "txt"
