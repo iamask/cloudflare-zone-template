@@ -2,7 +2,7 @@ resource "cloudflare_custom_hostname" "merchant1" {
   zone_id  = var.ZONE_ID
   hostname = "checkout.netflix.com"
   ssl {
-    method = "http"
+    method = "txt"
   }
    custom_metadata = {
     "customer" = "premium"
@@ -20,7 +20,7 @@ resource "cloudflare_custom_hostname" "merchant2" {
   }
    custom_metadata = {
     "customer" = "free"
-    "security_level"   = "low"
+    "security_level"   = "http"
     "customer_id" = 124
   }
 }
