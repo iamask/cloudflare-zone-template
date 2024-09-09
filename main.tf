@@ -105,8 +105,8 @@ module "zero_trust_access" {
 }
 
 
-module "custom_hostnames" {
-  source    = "./tls/custom_hostname"
+module "cloudflare_custom_hostname" {
+  source    = "./tls/custom_hostnames"
   API_TOKEN = var.API_TOKEN
   ZONE_ID   = var.ZONE_ID
 }

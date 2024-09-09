@@ -1,4 +1,4 @@
-resource "cloudflare_custom_hostname" "custom_hostname" {
+resource "cloudflare_custom_hostname" "custom_hostnames" {
   zone_id  = var.ZONE_ID
   hostname = "checkout.netflix.co.in"
   ssl {
