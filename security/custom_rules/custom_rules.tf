@@ -14,7 +14,7 @@ rules {
 
     rules {
     action      = "block"
-    expression  = "(ip.geoip.country in {\"CN\" \"PK\" \"RU\" \"UA\"})"
+    expression  = "(ip.geoip.country in {\"US\" \"PK\" \"RU\" \"UA\"})"
     description = "Geo Block for POC"
     enabled     = true
   }
