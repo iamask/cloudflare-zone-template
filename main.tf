@@ -105,7 +105,7 @@ module "zero_trust_access" {
 }
 
 
-module "custom_hostname" {
+module "custom_hostnames" {
   source    = "./tls/custom_hostname"
   API_TOKEN = var.API_TOKEN
   ZONE_ID   = var.ZONE_ID
