@@ -8,7 +8,7 @@ resource "cloudflare_record" "www" {
 
 resource "cloudflare_record" "fallback" {
   zone_id = var.ZONE_ID
-  name    = "www"
+  name    = "fallback"
   value   = "34.93.22.64"
   type    = "A"
   proxied = true
