@@ -1,4 +1,4 @@
-resource "cloudflare_record" "wwe" {
+resource "cloudflare_record" "wwwe" {
   zone_id = var.ZONE_ID
   name    = "www"
   value   = "34.93.22.64"
