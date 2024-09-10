@@ -27,3 +27,18 @@ resource "cloudflare_custom_hostname" "merchant2" {
   }
 }
 
+
+resource "cloudflare_custom_hostname" "merchant2" {
+  zone_id  = var.ZONE_ID
+  hostname = "ajay2.tf.zxc.co.in"
+  ssl {
+    method = "http"
+  }
+   custom_metadata = {
+    "customer" = "free"
+    "security_level"   = "high"
+    "customer_id" = 124
+  
+  }
+}
+
