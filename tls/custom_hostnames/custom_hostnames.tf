@@ -28,7 +28,7 @@ resource "cloudflare_custom_hostname" "merchant2" {
 }
 
 
-resource "cloudflare_custom_hostname" "merchant2" {
+resource "cloudflare_custom_hostname" "merchant3" {
   zone_id  = var.ZONE_ID
   hostname = "ajay2.tf.zxc.co.in"
   ssl {
