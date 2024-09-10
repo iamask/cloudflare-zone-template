@@ -42,3 +42,18 @@ resource "cloudflare_custom_hostname" "merchant3" {
   }
 }
 
+
+resource "cloudflare_custom_hostname" "merchant4" {
+  zone_id  = var.ZONE_ID
+  hostname = "checkout.cloudflare.com"
+  ssl {
+    method = "txt"
+  }
+   custom_metadata = {
+    "customer" = "premium"
+    "security_level"   = "high"
+    "customer_id" = 124
+  
+  }
+}
+
