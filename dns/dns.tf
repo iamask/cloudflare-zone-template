@@ -1,23 +1,23 @@
 resource "cloudflare_record" "www" {
   zone_id = var.ZONE_ID
   name    = "www"
-  value   = "203.0.113.177"
+  value   = "34.93.22.64"
   type    = "A"
   proxied = true
 }
 
-resource "cloudflare_record" "a" {
+resource "cloudflare_record" "fallback" {
   zone_id = var.ZONE_ID
-  name    = "aa"
-  value   = "122.0.23.145"
+  name    = "www"
+  value   = "34.93.22.64"
   type    = "A"
   proxied = true
 }
 
-resource "cloudflare_record" "aa" {
+resource "cloudflare_record" "wildcard" {
   zone_id = var.ZONE_ID
-  name    = "aa"
-  value   = "200.0.23.100"
-  type    = "A"
+  name    = "*"
+  value   = "www.tf.zxc.co.in"
+  type    = "CNAME"
   proxied = true
 }
