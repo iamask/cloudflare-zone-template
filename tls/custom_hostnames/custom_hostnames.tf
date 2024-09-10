@@ -7,7 +7,7 @@ resource "cloudflare_custom_hostname" "merchant1" {
    custom_metadata = {
     "customer" = "premium"
     "security_level"   = "low"
-    "customer_id" = 123
+    "customer_id" = 1
   }
 }
 
@@ -22,7 +22,7 @@ resource "cloudflare_custom_hostname" "merchant2" {
    custom_metadata = {
     "customer" = "free"
     "security_level"   = "high"
-    "customer_id" = 124
+    "customer_id" = 2
   
   }
 }
@@ -37,7 +37,7 @@ resource "cloudflare_custom_hostname" "merchant3" {
    custom_metadata = {
     "customer" = "free"
     "security_level"   = "high"
-    "customer_id" = 124
+    "customer_id" = 3
   
   }
 }
@@ -52,7 +52,7 @@ resource "cloudflare_custom_hostname" "merchant4" {
    custom_metadata = {
     "customer" = "premium"
     "security_level"   = "high"
-    "customer_id" = 124
+    "customer_id" = 4
   
   }
 }
