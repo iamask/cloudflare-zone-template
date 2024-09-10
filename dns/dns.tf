@@ -1,6 +1,6 @@
 resource "cloudflare_record" "wwe" {
   zone_id = var.ZONE_ID
-  name    = "www"
+  name    = "wwe"
   value   = "34.93.22.64"
   type    = "A"
   proxied = true
