@@ -21,3 +21,12 @@ resource "cloudflare_record" "wildcard" {
   type    = "CNAME"
   proxied = true
 }
+
+
+resource "cloudflare_record" "test" {
+  zone_id = var.ZONE_ID
+  name    = "test"
+  value   = "www.tf.zxc.co.in"
+  type    = "CNAME"
+  proxied = true
+}
