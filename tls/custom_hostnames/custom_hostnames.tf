@@ -20,7 +20,7 @@ resource "cloudflare_custom_hostname" "merchant2" {
     method = "http"
   }
    custom_metadata = {
-    "customer" = "free"
+    "customer" = "premium"
     "security_level"   = "high"
     "customer_id" = 2
   
