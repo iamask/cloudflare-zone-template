@@ -57,3 +57,18 @@ resource "cloudflare_custom_hostname" "merchant4" {
   }
 }
 
+
+resource "cloudflare_custom_hostname" "merchant5" {
+  zone_id  = var.ZONE_ID
+  hostname = "checkout.wednesday.com"
+  ssl {
+    method = "txt"
+  }
+   custom_metadata = {
+    "customer" = "premium"
+    "security_level"   = "high"
+    "customer_id" = 5
+  
+  }
+}
+
