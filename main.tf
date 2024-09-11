@@ -52,7 +52,7 @@ resource "cloudflare_zone_settings_override" "tf-zxc-co-in-settings" {
 resource "cloudflare_hostname_tls_setting_ciphers" "zoneciphers" {
   zone_id  = var.ZONE_ID
   hostname = "ajay2.tf.zxc.co.in"
-  value    = ["ECDHE-ECDSA-AES128-GCM-SHA256", "ECDHE-ECDSA-CHACHA20-POLY1305", "ECDHE-RSA-AES128-GCM-SHA256", "ECDHE-RSA-CHACHA20-POLY1305", "ECDHE-ECDSA-AES256-GCM-SHA384", "ECDHE-RSA-AES256-GCM-SHA384"]
+  value    = ["ECDHE-ECDSA-AES128-GCM-SHA256"]
 }
 
 module "dns" {
