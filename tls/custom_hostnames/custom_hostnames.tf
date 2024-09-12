@@ -74,7 +74,7 @@ resource "cloudflare_custom_hostname" "merchant5" {
   }
    custom_metadata = {
     "customer" = "premium"
-    "security_level"   = "high"
+    "security_level"   = "low"
     "customer_id" = 5
     "region" = "EU"
     "customer_noise" = "high"
