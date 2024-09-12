@@ -9,6 +9,7 @@ resource "cloudflare_custom_hostname" "merchant1" {
     "security_level"   = "low"
     "customer_id" = 1
     "region" = "US"
+    "customer_noise" = "high"
   }
 }
 
@@ -25,6 +26,7 @@ resource "cloudflare_custom_hostname" "merchant2" {
     "security_level"   = "high"
     "customer_id" = 2
     "region" = "IN"
+    "customer_noise" = "high"
   
   }
 }
@@ -41,6 +43,7 @@ resource "cloudflare_custom_hostname" "merchant3" {
     "security_level"   = "high"
     "customer_id" = 3
     "region" = "IN"
+    "customer_noise" = "low"
   
   }
 }
@@ -57,6 +60,7 @@ resource "cloudflare_custom_hostname" "merchant4" {
     "security_level"   = "high"
     "customer_id" = 4
     "region" = "US"
+    "customer_noise" = "low"
   
   }
 }
@@ -73,6 +77,7 @@ resource "cloudflare_custom_hostname" "merchant5" {
     "security_level"   = "high"
     "customer_id" = 5
     "region" = "EU"
+    "customer_noise" = "high"
   
   }
 }
