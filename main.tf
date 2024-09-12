@@ -116,3 +116,10 @@ module "custom_hostname" {
   API_TOKEN = var.API_TOKEN
   ZONE_ID   = var.ZONE_ID
 }
+
+
+module "origin_rules" {
+  source    = "./rules/origin_rules"
+  API_TOKEN = var.API_TOKEN
+  ZONE_ID   = var.ZONE_ID
+}
