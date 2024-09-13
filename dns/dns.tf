@@ -15,18 +15,18 @@ resource "cloudflare_record" "fallback" {
 }
 
 
-resource "cloudflare_record" "test" {
+resource "cloudflare_record" "wildcard" {
   zone_id = var.ZONE_ID
-  name    = "test"
-  value   = "www.tf.zxc.co.in"
-  type    = "CNAME"
+  name    = "*"
+  value   = "34.93.22.64"
+  type    = "A"
   proxied = true
 }
 
 resource "cloudflare_record" "delhi" {
   zone_id = var.ZONE_ID
   name    = "delhi"
-  value   = "34.93.22.64"
+  value   = "34.131.175.40"
   type    = "A"
   proxied = true
 }
