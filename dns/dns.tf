@@ -14,14 +14,6 @@ resource "cloudflare_record" "fallback" {
   proxied = true
 }
 
-resource "cloudflare_record" "wildcard" {
-  zone_id = var.ZONE_ID
-  name    = "*"
-  value   = "www.tf.zxc.co.in"
-  type    = "CNAME"
-  proxied = true
-}
-
 
 resource "cloudflare_record" "test" {
   zone_id = var.ZONE_ID
@@ -30,3 +22,12 @@ resource "cloudflare_record" "test" {
   type    = "CNAME"
   proxied = true
 }
+
+resource "cloudflare_record" "delhi" {
+  zone_id = var.ZONE_ID
+  name    = "delhi"
+  value   = "34.93.22.64"
+  type    = "A"
+  proxied = true
+}
+

@@ -10,8 +10,7 @@ resource "cloudflare_ruleset" "http_origin_noisy" {
     action = "route"
     action_parameters {
       origin {
-        host = "eu-noisy.tf.zxc.co.in"
-        port = 8443
+        host = "delhi.tf.zxc.co.in"
       }
     }
 
