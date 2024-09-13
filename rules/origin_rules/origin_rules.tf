@@ -15,8 +15,8 @@ resource "cloudflare_ruleset" "http_origin_noisy" {
       }
     }
 
-    # Check if the hostname's metadata 'customer' is set to 'noisy'
-    expression  = "lookup_json_string(cf.hostname.metadata, \"customer\") == \"noisy\""
+    # Check if the hostname's metadata 'customer_noise' is set to 'high'
+    expression  = "lookup_json_string(cf.hostname.metadata, \"customer_noise\") == \"high\""
     description = "Change origins for noisy customers"
     enabled     = true
   }
