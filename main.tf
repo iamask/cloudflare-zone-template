@@ -27,7 +27,6 @@ resource "cloudflare_zone_settings_override" "tf-zxc-co-in-settings" {
   zone_id = var.ZONE_ID
 
   settings {
-    tls_1_3                  = "on"
     automatic_https_rewrites = "on"
     ssl                      = "flexible"
     brotli                   = "off"
