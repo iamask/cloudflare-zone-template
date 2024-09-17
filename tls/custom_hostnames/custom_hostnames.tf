@@ -82,3 +82,20 @@ resource "cloudflare_custom_hostname" "merchant5" {
   }
 }
 
+resource "cloudflare_custom_hostname" "merchant6" {
+  zone_id  = var.ZONE_ID
+  hostname = "checkout.testing.com"
+  ssl {
+    method = "txt"
+  }
+   custom_metadata = {
+    "customer" = "premium"
+    "security_level"   = "low"
+    "customer_id" = 6
+    "region" = "EU"
+    "customer_noise" = "high"
+  
+  }
+}
+
+
