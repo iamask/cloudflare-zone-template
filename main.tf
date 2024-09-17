@@ -29,7 +29,6 @@ resource "cloudflare_zone_settings_override" "tf-zxc-co-in-settings" {
   settings {
     automatic_https_rewrites = "on"
     ssl                      = "flexible"
-    brotli                   = "off"
     http2                    = "on"
     h2_prioritization        = "on"
     http3                    = "on"
