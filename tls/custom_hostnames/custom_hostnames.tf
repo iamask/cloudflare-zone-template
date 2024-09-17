@@ -1,17 +1,3 @@
-resource "cloudflare_custom_hostname" "merchant1" {
-  zone_id  = var.ZONE_ID
-  hostname = "checkout.netflix.com"
-  ssl {
-    method = "txt"
-  }
-   custom_metadata = {
-    "customer" = "premium"
-    "security_level"   = "low"
-    "customer_id" = 1
-    "region" = "US"
-    "customer_noise" = "high"
-  }
-}
 
 
 resource "cloudflare_custom_hostname" "merchant2" {
