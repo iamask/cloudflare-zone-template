@@ -14,6 +14,22 @@ resource "cloudflare_custom_hostname" "merchant1" {
 }
 
 
+resource "cloudflare_custom_hostname" "merchant2" {
+  zone_id  = var.ZONE_ID
+  hostname = "ajay.tf.zxc.co.in"
+  custom_origin_server = "www.tf.zxc.co.in"
+  ssl {
+    method = "http"
+  }
+   custom_metadata = {
+    "customer" = "premium"
+    "security_level"   = "high"
+    "customer_id" = 2
+    "region" = "IN"
+    "customer_noise" = "high"
+  
+  }
+}
 
 
 resource "cloudflare_custom_hostname" "merchant3" {
