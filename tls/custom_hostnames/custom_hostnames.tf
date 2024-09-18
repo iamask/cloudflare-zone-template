@@ -113,6 +113,7 @@ The for_each iterates over each merchant in the custom_hostnames map.
 each.value accesses the individual values (like hostname, ssl_method, custom_origin_server, and custom_metadata).
 Using try() ensures that the custom_origin_server is only set when provided, preventing errors when it’s missing.
 
+Define the Hostname Configurations in a Variable:
 
 variable "custom_hostnames" {
   type = map(object({
@@ -190,6 +191,24 @@ variable "custom_hostnames" {
       }
     }
   }
+}
+
+Use for_each to Iterate over the Map:
+
+resource "cloudflare_custom_hostname" "custom_hostnames" {
+  for_each = var.custom_hostnames
+
+  zone_id  = var.ZONE_ID
+  hostname = each.value.hostname
+
+  # Conditionally set custom_origin_server if it exists
+  custom_origin_server = try(each.value.custom_origin_server, null)
+
+  ssl {
+    method = each.value.ssl_method
+  }
+
+  custom_metadata = each.value.custom_metadata
 }
 
 
