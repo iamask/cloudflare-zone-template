@@ -115,6 +115,8 @@ Using try() ensures that the custom_origin_server is only set when provided, pre
 
 Define the Hostname Configurations in a Variable:
 
+#this needs to be added in variable.tf for better organizing
+
 variable "custom_hostnames" {
   type = map(object({
     hostname             = string
@@ -193,6 +195,8 @@ variable "custom_hostnames" {
   }
 }
 
+
+#this needs to be added in custom_hostname.tf 
 Use for_each to Iterate over the Map:
 
 resource "cloudflare_custom_hostname" "custom_hostnames" {
