@@ -17,7 +17,7 @@ resource "cloudflare_custom_hostname" "merchant1" {
 resource "cloudflare_custom_hostname" "merchant2" {
   zone_id  = var.ZONE_ID
   hostname = "ajay.tf.zxc.co.in"
-  custom_origin_server = "www.tf.zxc.co.in"
+  custom_origin_server = "wwe.tf.zxc.co.in"
   ssl {
     method = "http"
   }
