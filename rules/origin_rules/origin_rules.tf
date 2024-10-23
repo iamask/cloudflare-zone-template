@@ -10,7 +10,7 @@ resource "cloudflare_ruleset" "http_origin_noisy" {
     action = "route"
     action_parameters {
       origin {
-        host = "delhi.tf.zxc.co.in"
+        host = "delhi2.tf.zxc.co.in"
       }
     }
 
