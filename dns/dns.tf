@@ -41,3 +41,13 @@ resource "cloudflare_record" "api" {
 }
 
 
+resource "cloudflare_record" "api2" {
+  zone_id = var.ZONE_ID
+  name    = "api2"
+  value   = "34.131.175.40"
+  type    = "A"
+  proxied = true
+}
+
+
+
