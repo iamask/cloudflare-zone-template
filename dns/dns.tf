@@ -31,3 +31,13 @@ resource "cloudflare_record" "delhi" {
   proxied = true
 }
 
+
+resource "cloudflare_record" "api" {
+  zone_id = var.ZONE_ID
+  name    = "api"
+  value   = "34.131.175.40"
+  type    = "A"
+  proxied = true
+}
+
+
