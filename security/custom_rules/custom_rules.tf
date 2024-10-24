@@ -14,7 +14,7 @@ resource "cloudflare_ruleset" "zone_custom_firewall" {
 
   rules {
     action      = "block"
-    expression  = "(ip.geoip.country in {\"CN\" \"PK\" \"RU\" \"UA\"})"
+    expression  = "(ip.geoip.country in {\"CN\" \"PK\" \"RU\" \"IN\"})"
     description = "Geo Block for POC"
     enabled     = true
   }
