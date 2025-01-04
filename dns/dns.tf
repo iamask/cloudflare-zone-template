@@ -26,7 +26,7 @@ resource "cloudflare_record" "wildcard" {
 resource "cloudflare_record" "delhi" {
   zone_id = var.ZONE_ID
   name    = "delhi"
-  value   = "34.131.175.40"
+  value   = "34.131.175.140"
   type    = "A"
   proxied = true
 }
