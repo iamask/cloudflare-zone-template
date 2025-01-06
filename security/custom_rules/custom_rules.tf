@@ -7,6 +7,13 @@ resource "cloudflare_ruleset" "zone_custom_firewall" {
 
   rules {
     action      = "block"
+    expression  = "(ip.geoip.country in {\"CN\" \"PK\" \"RU\" \"IN\"})"
+    description = "Geo Block for POC3"
+    enabled     = true
+  }
+
+  rules {
+    action      = "block"
     expression  = "(not cf.edge.server_port in {80 443})"
     description = "Block ports other than 80 and 443"
     enabled     = true
